@@ -25,8 +25,8 @@
     </aside>
     <main class="main-content">
         <header class="header">
-            <h1 id="welcome-message">Company Dashboard 🏢</h1>
-            <div class="user-avatar" id="user-avatar" onclick="location.href='profile.html'">TC</div>
+            <h1>Company Dashboard 🏢</h1>
+            <div class="user-avatar" onclick="location.href='profile.html'">TC</div>
         </header>
         <div class="stats-grid">
             <div class="stat-card"><div class="stat-value">156</div><div style="color:var(--gray-medium);font-size:.9rem">Total Applicants</div></div>
@@ -64,21 +64,5 @@
             </div>
         </div>
     </main>
-    <script>
-        const fullName = "{{ full_name if full_name is defined else '' }}";
-        if (fullName && fullName.trim() !== '') {
-            document.getElementById('welcome-message').textContent = `Welcome back, ${fullName}! 🏢`;
-            const names = fullName.trim().split(' ');
-            let initials = '';
-            if (names.length >= 2) {
-                initials = names[0][0] + names[names.length - 1][0];
-            } else if (names.length === 1 && names[0].length > 0) {
-                initials = names[0][0];
-            }
-            if (initials) {
-                document.getElementById('user-avatar').textContent = initials.toUpperCase();
-            }
-        }
-    </script>
 </body>
 </html>

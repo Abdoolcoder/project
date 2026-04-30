@@ -10,7 +10,7 @@
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo" onclick="location.href='/dashboard'">
+        <div class="logo" onclick="location.href='home.html'">
             <div class="logo-icon"></div><span>MORIAL</span>
         </div>
         <ul class="sidebar-menu">
@@ -20,13 +20,13 @@
             <li class="sidebar-item">💳 Transactions</li>
             <li class="sidebar-item">📈 Reports</li>
             <li class="sidebar-item">✓ Verifications</li>
-            <li class="sidebar-item" onclick="location.href='/settings'">⚙️ Settings</li>
+            <li class="sidebar-item" onclick="location.href='settings.html'">⚙️ Settings</li>
         </ul>
     </aside>
     <main class="main-content">
         <header class="header">
-            <h1 id="welcome-message">Admin Dashboard 🛡️</h1>
-            <div class="user-avatar" id="user-avatar" onclick="location.href='/profile'">AD</div>
+            <h1>Admin Dashboard 🛡️</h1>
+            <div class="user-avatar" onclick="location.href='profile.html'">AD</div>
         </header>
         <div class="stats-grid">
             <div class="stat-card"><div class="stat-value">10.5K</div><div style="color:var(--gray-medium);font-size:.9rem">Total Users</div></div>
@@ -53,33 +53,17 @@
             <h2>Recent User Registrations</h2>
             <div style="padding:1rem;background:var(--navy-light);border-radius:12px;margin-bottom:1rem">
                 <div style="display:flex;justify-content:space-between;align-items:center">
-                    <div><div style="font-weight:700">John Doe</div><div style="color:var(--gray-medium);font-size:.85rem">Learner • <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0babfb8be90b5bdb1b9bcfeb3bfbd">[email&#160;protected]</a></div></div>
+                    <div><div style="font-weight:700">John Doe</div><div style="color:var(--gray-medium);font-size:.85rem">Learner • john@email.com</div></div>
                     <span style="background:#7ed321;color:var(--navy-deep);padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700">ACTIVE</span>
                 </div>
             </div>
             <div style="padding:1rem;background:var(--navy-light);border-radius:12px">
                 <div style="display:flex;justify-content:space-between;align-items:center">
-                    <div><div style="font-weight:700">TechCorp Inc</div><div style="color:var(--gray-medium);font-size:.85rem">Company • <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a1bb89bdacaaa1aaa6bbb9e7aaa6a4">[email&#160;protected]</a></div></div>
+                    <div><div style="font-weight:700">TechCorp Inc</div><div style="color:var(--gray-medium);font-size:.85rem">Company • hr@techcorp.com</div></div>
                     <span style="background:var(--gold-primary);color:var(--navy-deep);padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700">PENDING</span>
                 </div>
             </div>
         </div>
     </main>
-    <script>
-        const fullName = "{{ full_name if full_name is defined else '' }}";
-        if (fullName && fullName.trim() !== '') {
-            document.getElementById('welcome-message').textContent = `Welcome, ${fullName}! 🛡️`;
-            const names = fullName.trim().split(' ');
-            let initials = '';
-            if (names.length >= 2) {
-                initials = names[0][0] + names[names.length - 1][0];
-            } else if (names.length === 1 && names[0].length > 0) {
-                initials = names[0][0];
-            }
-            if (initials) {
-                document.getElementById('user-avatar').textContent = initials.toUpperCase();
-            }
-        }
-    </script>
 </body>
 </html>
