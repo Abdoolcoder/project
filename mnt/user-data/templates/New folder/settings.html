@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - MORIAL</title>
+    <style>
+        :root{--navy-deep:#0a1628;--navy-primary:#162642;--navy-secondary:#1e3a5f;--navy-light:#2a4a73;--gold-primary:#f5a623;--danger:#d32f2f;--white:#fff;--gray-light:#e8ecf0;--gray-medium:#8c9db5}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--navy-deep);color:var(--white)}.header{background:var(--navy-primary);padding:1.5rem 3%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}.logo{display:flex;align-items:center;gap:.5rem;font-size:1.5rem;font-weight:800;cursor:pointer}.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}.btn{background:var(--navy-secondary);color:var(--white);padding:.75rem 1.5rem;border-radius:50px;font-weight:600;border:none;cursor:pointer;transition:all .3s}.btn:hover{background:var(--navy-light)}.main{max-width:1200px;margin:0 auto;padding:3rem 3%}.container{display:grid;grid-template-columns:250px 1fr;gap:2rem}.nav{background:var(--navy-secondary);padding:1.5rem 0;border-radius:20px;height:fit-content;border:1px solid rgba(255,255,255,.1)}.nav-item{padding:1rem 1.5rem;cursor:pointer;transition:all .3s;color:var(--gray-light);font-weight:500}.nav-item:hover,.nav-item.active{background:var(--navy-light);color:var(--white);border-left:3px solid var(--gold-primary)}.card{background:var(--navy-secondary);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:2rem}.card h2{font-size:1.5rem;font-weight:700;margin-bottom:.5rem}.desc{color:var(--gray-medium);margin-bottom:2rem}.form-group{margin-bottom:1.5rem}.form-group label{display:block;margin-bottom:.5rem;font-weight:600;font-size:.95rem}.form-group input,.form-group select{width:100%;padding:.9rem;border-radius:12px;border:2px solid rgba(255,255,255,.1);background:var(--navy-light);color:var(--white);font-size:1rem;font-family:inherit}.form-group input:focus{outline:none;border-color:var(--gold-primary)}.btn-primary{background:linear-gradient(135deg,var(--gold-primary),#ffc04d);color:var(--navy-deep);padding:.75rem 1.5rem;border-radius:50px;font-weight:700;border:none;cursor:pointer}.toggle{position:relative;width:52px;height:28px}.toggle input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--navy-deep);transition:.4s;border-radius:34px}.slider:before{position:absolute;content:"";height:20px;width:20px;left:4px;bottom:4px;background-color:var(--gray-medium);transition:.4s;border-radius:50%}input:checked+.slider{background-color:var(--gold-primary)}input:checked+.slider:before{transform:translateX(24px);background-color:var(--navy-deep)}.setting-item{display:flex;justify-content:space-between;align-items:center;padding:1.2rem;background:var(--navy-light);border-radius:12px;margin-bottom:1rem}@media (max-width:1024px){.container{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="location.href='/dashboard'">
+            <div class="logo-icon"></div><span>MORIAL</span>
+        </div>
+        <button class="btn" onclick="history.back()">← Back</button>
+    </header>
+    <main class="main">
+        <h1 style="font-size:2.5rem;margin-bottom:.5rem">Settings</h1>
+        <p style="color:var(--gray-medium);font-size:1.1rem;margin-bottom:3rem">Manage your account settings and preferences</p>
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-item active" onclick="showSection('account')">👤 Account</div>
+                <div class="nav-item" onclick="showSection('notifications')">🔔 Notifications</div>
+                <div class="nav-item" onclick="showSection('privacy')">🔒 Privacy</div>
+                <div class="nav-item" onclick="showSection('security')">🛡️ Security</div>
+            </nav>
+            <div id="content">
+                <div class="card">
+                    <h2>Account Information</h2>
+                    <p class="desc">Update your account details</p>
+                    <div class="form-group"><label>Full Name</label><input type="text" value="John Doe"></div>
+                    <div class="form-group"><label>Email Address</label><input type="email" value="john.doe@email.com"></div>
+                    <div class="form-group"><label>Phone Number</label><input type="tel" value="+234 801 234 5678"></div>
+                    <button class="btn-primary">Save Changes</button>
+                </div>
+                <div class="card">
+                    <h2>Change Password</h2>
+                    <p class="desc">Ensure your account is using a strong password</p>
+                    <div class="form-group"><label>Current Password</label><input type="password" placeholder="Enter current password"></div>
+                    <div class="form-group"><label>New Password</label><input type="password" placeholder="Enter new password"></div>
+                    <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Confirm new password"></div>
+                    <button class="btn-primary">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function showSection(section){
+            const sections={
+                account:`<div class="card"><h2>Account Information</h2><p class="desc">Update your account details</p><div class="form-group"><label>Full Name</label><input type="text" value="John Doe"></div><div class="form-group"><label>Email Address</label><input type="email" value="john.doe@email.com"></div><button class="btn-primary">Save Changes</button></div>`,
+                notifications:`<div class="card"><h2>Notification Preferences</h2><p class="desc">Choose how you want to be notified</p><div class="setting-item"><div><h4 style="margin-bottom:.3rem">Email Notifications</h4><p style="font-size:.85rem;color:var(--gray-medium)">Receive notifications via email</p></div><label class="toggle"><input type="checkbox" checked><span class="slider"></span></label></div></div>`,
+                privacy:`<div class="card"><h2>Privacy Settings</h2><p class="desc">Control who can see your information</p><div class="setting-item"><div><h4 style="margin-bottom:.3rem">Public Profile</h4><p style="font-size:.85rem;color:var(--gray-medium)">Make your profile visible to everyone</p></div><label class="toggle"><input type="checkbox" checked><span class="slider"></span></label></div></div>`,
+                security:`<div class="card"><h2>Security Settings</h2><p class="desc">Protect your account with additional security</p><div class="setting-item"><div><h4 style="margin-bottom:.3rem">Two-Factor Authentication</h4><p style="font-size:.85rem;color:var(--gray-medium)">Add an extra layer of security</p></div><label class="toggle"><input type="checkbox"><span class="slider"></span></label></div></div>`
+            };
+            document.getElementById('content').innerHTML=sections[section];
+            document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

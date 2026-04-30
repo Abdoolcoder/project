@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - MORIAL</title>
+    <style>
+        :root{--navy-deep:#0a1628;--navy-primary:#162642;--navy-secondary:#1e3a5f;--navy-light:#2a4a73;--gold-primary:#f5a623;--white:#fff;--gray-light:#e8ecf0;--gray-medium:#8c9db5;--success:#7ed321}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--navy-deep);color:var(--white)}.header{background:var(--navy-primary);padding:1.5rem 3%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}.logo{display:flex;align-items:center;gap:.5rem;font-size:1.5rem;font-weight:800;cursor:pointer}.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}.btn{background:var(--navy-secondary);color:var(--white);padding:.75rem 1.5rem;border-radius:50px;font-weight:600;border:none;cursor:pointer}.main{max-width:1400px;margin:0 auto;padding:3rem 3%}.hero{background:linear-gradient(135deg,var(--navy-secondary),var(--navy-light));padding:3rem;border-radius:24px;margin-bottom:3rem;display:grid;grid-template-columns:2fr 1fr;gap:3rem;border:1px solid rgba(255,255,255,.1)}.hero h1{font-size:2.8rem;margin-bottom:1rem;line-height:1.2}.meta{display:flex;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}.meta-item{display:flex;align-items:center;gap:.5rem;color:var(--gray-light)}.desc{color:var(--gray-light);line-height:1.8;margin-bottom:1.5rem}.stats{display:flex;gap:2rem}.stat{text-align:center}.stat-value{font-size:2rem;font-weight:900;color:var(--gold-primary)}.stat-label{font-size:.85rem;color:var(--gray-medium);margin-top:.3rem}.sidebar{background:var(--navy-deep);padding:2rem;border-radius:20px}.price{font-size:3rem;font-weight:900;color:var(--gold-primary);margin-bottom:.5rem}.btn-primary{background:linear-gradient(135deg,var(--gold-primary),#ffc04d);color:var(--navy-deep);padding:1rem;border-radius:50px;font-weight:700;border:none;cursor:pointer;width:100%;font-size:1.1rem;margin-bottom:1rem}.btn-primary:hover{transform:translateY(-2px)}.progress{background:var(--navy-secondary);padding:2rem;border-radius:20px;margin-bottom:2rem;border:1px solid rgba(255,255,255,.1)}.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem}.progress-percent{font-size:2rem;font-weight:900;color:var(--gold-primary)}.progress-bar{height:12px;background:var(--navy-deep);border-radius:10px;overflow:hidden}.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold-primary),#ffc04d);border-radius:10px}.grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem}.card{background:var(--navy-secondary);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:2rem}.card h2{font-size:1.5rem;margin-bottom:1.5rem}.module{padding:1.5rem;background:var(--navy-light);border-radius:12px;margin-bottom:.8rem;cursor:pointer;border-left:3px solid transparent}.module:hover{border-left-color:var(--gold-primary)}.module.completed{border-left-color:var(--success)}.module-title{font-weight:700;margin-bottom:.3rem}.badge{padding:.3rem .8rem;border-radius:20px;font-size:.7rem;font-weight:700}.badge-completed{background:var(--success);color:var(--navy-deep)}.badge-progress{background:var(--gold-primary);color:var(--navy-deep)}@media (max-width:1024px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="location.href='learner.html'">
+            <div class="logo-icon"></div><span>MORIAL</span>
+        </div>
+        <button class="btn" onclick="history.back()">← Back</button>
+    </header>
+    <main class="main">
+        <div class="hero">
+            <div>
+                <h1>Complete Web Development Bootcamp</h1>
+                <div class="meta">
+                    <div class="meta-item">📚 COURSERA</div>
+                    <div class="meta-item">⭐ 4.8 (12,450 reviews)</div>
+                    <div class="meta-item">👥 45,230 students</div>
+                </div>
+                <p class="desc">Learn web development from scratch. Master HTML, CSS, JavaScript, React, Node.js, and MongoDB. Build 15+ real-world projects and launch your career as a full-stack developer.</p>
+                <div class="stats">
+                    <div class="stat"><div class="stat-value">12</div><div class="stat-label">Modules</div></div>
+                    <div class="stat"><div class="stat-value">65h</div><div class="stat-label">Duration</div></div>
+                    <div class="stat"><div class="stat-value">15+</div><div class="stat-label">Projects</div></div>
+                    <div class="stat"><div class="stat-value">✓</div><div class="stat-label">Certificate</div></div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="price">$199</div>
+                <div style="color:var(--gray-medium);font-size:.9rem;margin-bottom:1.5rem">One-time payment • Lifetime access</div>
+                <button class="btn-primary">Continue Learning</button>
+                <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)">
+                    <div style="font-weight:700;margin-bottom:1rem">This course includes:</div>
+                    <div style="font-size:.9rem;color:var(--gray-light);line-height:2">
+                        <div>✓ 65 hours on-demand video</div>
+                        <div>✓ 45 coding exercises</div>
+                        <div>✓ 15 real-world projects</div>
+                        <div>✓ Certificate of completion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="progress-header">
+                <h2>Your Progress</h2>
+                <span class="progress-percent">65%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:65%"></div></div>
+            <p style="margin-top:1rem;color:var(--gray-light)"><strong>Current:</strong> Module 4 - JavaScript Essentials</p>
+        </div>
+        <div class="grid">
+            <div>
+                <div class="card">
+                    <h2>Course Curriculum</h2>
+                    <div class="module completed">
+                        <div style="display:flex;justify-content:space-between;align-items:start">
+                            <div><div class="module-title">1. Introduction to Web Development</div><div style="color:var(--gray-medium);font-size:.85rem">6 lessons • 4.5 hours</div></div>
+                            <span class="badge badge-completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="module completed">
+                        <div style="display:flex;justify-content:space-between;align-items:start">
+                            <div><div class="module-title">2. HTML5 Fundamentals</div><div style="color:var(--gray-medium);font-size:.85rem">8 lessons • 5 hours</div></div>
+                            <span class="badge badge-completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="module completed">
+                        <div style="display:flex;justify-content:space-between;align-items:start">
+                            <div><div class="module-title">3. CSS3 & Responsive Design</div><div style="color:var(--gray-medium);font-size:.85rem">10 lessons • 6 hours</div></div>
+                            <span class="badge badge-completed">Completed</span>
+                        </div>
+                    </div>
+                    <div class="module" style="border-left-color:var(--gold-primary)">
+                        <div style="display:flex;justify-content:space-between;align-items:start">
+                            <div><div class="module-title">4. JavaScript Essentials</div><div style="color:var(--gray-medium);font-size:.85rem">12 lessons • 7 hours</div></div>
+                            <span class="badge badge-progress">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="module">
+                        <div style="display:flex;justify-content:space-between;align-items:start">
+                            <div><div class="module-title">5. Advanced JavaScript</div><div style="color:var(--gray-medium);font-size:.85rem">10 lessons • 6.5 hours</div></div>
+                            <span class="badge" style="background:var(--gray-medium);color:var(--navy-deep)">Locked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <h2>Instructor</h2>
+                    <div style="display:flex;gap:1.5rem;padding:1.5rem;background:var(--navy-light);border-radius:16px">
+                        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;flex-shrink:0">AW</div>
+                        <div><h3 style="font-size:1.3rem;margin-bottom:.3rem">Angela Williams</h3><div style="color:var(--gold-primary);font-weight:600;margin-bottom:.8rem">Senior Developer</div><div style="display:flex;gap:1.5rem;font-size:.9rem;color:var(--gray-light)"><div>⭐ 4.9</div><div>👥 250K</div></div></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Skills You'll Learn</h2>
+                    <div style="display:flex;flex-wrap:wrap;gap:.8rem">
+                        <div style="background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem">HTML5</div>
+                        <div style="background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem">CSS3</div>
+                        <div style="background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem">JavaScript</div>
+                        <div style="background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem">React</div>
+                        <div style="background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem">Node.js</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

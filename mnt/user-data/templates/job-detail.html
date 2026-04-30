@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - MORIAL</title>
+    <style>
+        :root{--navy-deep:#0a1628;--navy-primary:#162642;--navy-secondary:#1e3a5f;--navy-light:#2a4a73;--gold-primary:#f5a623;--success:#7ed321;--white:#fff;--gray-light:#e8ecf0;--gray-medium:#8c9db5}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--navy-deep);color:var(--white)}.header{background:var(--navy-primary);padding:1.5rem 3%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.1)}.logo{display:flex;align-items:center;gap:.5rem;font-size:1.5rem;font-weight:800;cursor:pointer}.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}.btn{background:var(--navy-secondary);color:var(--white);padding:.75rem 1.5rem;border-radius:50px;font-weight:600;border:none;cursor:pointer}.main{max-width:1400px;margin:0 auto;padding:3rem 3%}.hero{background:linear-gradient(135deg,var(--navy-secondary),var(--navy-light));padding:3rem;border-radius:24px;margin-bottom:3rem;border:1px solid rgba(255,255,255,.1)}.job-header{display:flex;gap:2rem;align-items:start;margin-bottom:2rem}.company-logo{width:100px;height:100px;border-radius:20px;background:linear-gradient(135deg,var(--success),#8fe335);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:700;flex-shrink:0}.job-title{font-size:2.5rem;margin-bottom:.5rem}.company-name{font-size:1.3rem;color:var(--gold-primary);font-weight:600;margin-bottom:1rem}.meta{display:flex;gap:2rem;flex-wrap:wrap}.meta-item{display:flex;align-items:center;gap:.5rem;color:var(--gray-light)}.match-badge{background:var(--success);color:var(--navy-deep);padding:.6rem 1.5rem;border-radius:50px;font-weight:700;font-size:1.1rem}.salary{font-size:2rem;font-weight:900;color:var(--gold-primary);margin-bottom:1rem}.btn-primary{background:linear-gradient(135deg,var(--gold-primary),#ffc04d);color:var(--navy-deep);padding:1rem 2rem;border-radius:50px;font-weight:700;border:none;cursor:pointer;font-size:1.1rem;margin-right:1rem}.btn-primary:hover{transform:translateY(-2px)}.btn-secondary{background:transparent;color:var(--white);padding:1rem 2rem;border-radius:50px;font-weight:600;border:2px solid var(--white);cursor:pointer;font-size:1.1rem}.grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem}.card{background:var(--navy-secondary);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:2rem}.card h2{font-size:1.5rem;font-weight:700;margin-bottom:1.5rem}.desc{color:var(--gray-light);line-height:1.8;margin-bottom:1.5rem}.list-item{display:flex;align-items:start;gap:.8rem;margin-bottom:.8rem;color:var(--gray-light)}.skills{display:flex;flex-wrap:wrap;gap:.8rem}.skill{background:var(--navy-light);padding:.6rem 1.2rem;border-radius:50px;font-size:.9rem;border:1px solid rgba(255,255,255,.1)}.info-item{display:flex;justify-content:space-between;padding:1rem;background:var(--navy-light);border-radius:12px;margin-bottom:.8rem}.info-label{color:var(--gray-medium);font-size:.9rem}.info-value{font-weight:700}@media (max-width:1024px){.job-header{flex-direction:column;align-items:center;text-align:center}.grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="location.href='learner.html'">
+            <div class="logo-icon"></div><span>MORIAL</span>
+        </div>
+        <button class="btn" onclick="history.back()">← Back</button>
+    </header>
+    <main class="main">
+        <div class="hero">
+            <div class="job-header">
+                <div class="company-logo">TC</div>
+                <div style="flex:1">
+                    <h1 class="job-title">Senior Frontend Developer</h1>
+                    <div class="company-name">TechCorp Inc.</div>
+                    <div class="meta">
+                        <div class="meta-item">📍 Remote</div>
+                        <div class="meta-item">💼 Full-time</div>
+                        <div class="meta-item">📅 Posted 3 days ago</div>
+                        <div class="meta-item">👥 42 applicants</div>
+                    </div>
+                </div>
+                <div class="match-badge">95% Match</div>
+            </div>
+            <div class="salary">$80,000 - $120,000 / year</div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap">
+                <button class="btn-primary" onclick="alert('Application submitted!')">Apply Now</button>
+                <button class="btn-secondary">Save Job</button>
+            </div>
+        </div>
+        <div class="grid">
+            <div>
+                <div class="card">
+                    <h2>Job Description</h2>
+                    <p class="desc">We are looking for a talented Senior Frontend Developer to join our growing team. You'll be responsible for building beautiful, responsive user interfaces and working closely with our design and backend teams to create exceptional user experiences.</p>
+                    <p class="desc">The ideal candidate has a strong portfolio of web applications, deep knowledge of modern JavaScript frameworks (especially React), and a passion for writing clean, maintainable code.</p>
+                </div>
+                <div class="card">
+                    <h2>Responsibilities</h2>
+                    <div class="list-item"><span>•</span><span>Build and maintain responsive web applications using React</span></div>
+                    <div class="list-item"><span>•</span><span>Collaborate with designers to implement pixel-perfect UIs</span></div>
+                    <div class="list-item"><span>•</span><span>Write clean, maintainable, and well-tested code</span></div>
+                    <div class="list-item"><span>•</span><span>Participate in code reviews and mentor junior developers</span></div>
+                    <div class="list-item"><span>•</span><span>Optimize applications for maximum speed and scalability</span></div>
+                </div>
+                <div class="card">
+                    <h2>Requirements</h2>
+                    <div class="list-item"><span>•</span><span>5+ years of experience in frontend development</span></div>
+                    <div class="list-item"><span>•</span><span>Expert knowledge of React.js and modern JavaScript (ES6+)</span></div>
+                    <div class="list-item"><span>•</span><span>Strong proficiency in HTML5, CSS3, and responsive design</span></div>
+                    <div class="list-item"><span>•</span><span>Experience with state management libraries (Redux, MobX)</span></div>
+                    <div class="list-item"><span>•</span><span>Familiarity with RESTful APIs and async operations</span></div>
+                </div>
+                <div class="card">
+                    <h2>Required Skills</h2>
+                    <div class="skills">
+                        <div class="skill">React</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">HTML5</div>
+                        <div class="skill">CSS3</div>
+                        <div class="skill">TypeScript</div>
+                        <div class="skill">Redux</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">REST APIs</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Benefits</h2>
+                    <div class="list-item"><span>✓</span><span>Competitive salary with performance bonuses</span></div>
+                    <div class="list-item"><span>✓</span><span>Health insurance for you and your family</span></div>
+                    <div class="list-item"><span>✓</span><span>Flexible work hours and remote work options</span></div>
+                    <div class="list-item"><span>✓</span><span>Professional development budget</span></div>
+                    <div class="list-item"><span>✓</span><span>25 days paid vacation plus public holidays</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <h2>Job Details</h2>
+                    <div class="info-item"><span class="info-label">Job Type</span><span class="info-value">Full-time</span></div>
+                    <div class="info-item"><span class="info-label">Location</span><span class="info-value">Remote</span></div>
+                    <div class="info-item"><span class="info-label">Experience Level</span><span class="info-value">Senior</span></div>
+                    <div class="info-item"><span class="info-label">Salary Range</span><span class="info-value">$80K - $120K</span></div>
+                    <div class="info-item"><span class="info-label">Posted Date</span><span class="info-value">Dec 26, 2024</span></div>
+                    <div class="info-item"><span class="info-label">Applicants</span><span class="info-value">42</span></div>
+                </div>
+                <div class="card">
+                    <h2>About TechCorp</h2>
+                    <p class="desc">TechCorp is a leading technology company specializing in cloud solutions and enterprise software. With over 500 employees worldwide, we're committed to innovation and excellence.</p>
+                    <div class="info-item"><span class="info-label">Industry</span><span class="info-value">Technology</span></div>
+                    <div class="info-item"><span class="info-label">Company Size</span><span class="info-value">500-1000</span></div>
+                    <div class="info-item"><span class="info-label">Founded</span><span class="info-value">2010</span></div>
+                </div>
+                <div class="card">
+                    <h2>Similar Jobs</h2>
+                    <div style="padding:1rem;background:var(--navy-light);border-radius:12px;cursor:pointer;margin-bottom:1rem">
+                        <h4 style="margin-bottom:.5rem">React Developer</h4>
+                        <p style="font-size:.85rem;color:var(--gray-medium)">StartUp Co • $70K-100K • Remote</p>
+                    </div>
+                    <div style="padding:1rem;background:var(--navy-light);border-radius:12px;cursor:pointer">
+                        <h4 style="margin-bottom:.5rem">Frontend Engineer</h4>
+                        <p style="font-size:.85rem;color:var(--gray-medium)">Digital Agency • $75K-110K • Hybrid</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

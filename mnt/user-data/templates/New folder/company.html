@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard - MORIAL</title>
+    <style>
+        :root{--navy-deep:#0a1628;--navy-primary:#162642;--navy-secondary:#1e3a5f;--navy-light:#2a4a73;--gold-primary:#f5a623;--success:#7ed321;--white:#fff;--gray-light:#e8ecf0;--gray-medium:#8c9db5}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--navy-deep);color:var(--white);display:flex}.sidebar{width:260px;height:100vh;background:var(--navy-primary);position:fixed;left:0;top:0;padding:2rem 0;border-right:1px solid rgba(255,255,255,.1);overflow-y:auto}.logo{display:flex;align-items:center;gap:.5rem;padding:0 2rem;margin-bottom:2.5rem;font-size:1.5rem;font-weight:800;cursor:pointer}.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}.sidebar-menu{list-style:none}.sidebar-item{padding:1rem 2rem;cursor:pointer;transition:all .3s;color:var(--gray-light);font-weight:500}.sidebar-item:hover,.sidebar-item.active{background:var(--navy-secondary);color:var(--white);border-left:3px solid var(--gold-primary)}.main-content{margin-left:260px;flex:1;padding:2rem 3%}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}.header h1{font-size:2rem;font-weight:800}.user-avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,var(--success),#8fe335);display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem}.stat-card{background:var(--navy-secondary);padding:1.5rem;border-radius:16px;border:1px solid rgba(255,255,255,.1)}.stat-value{font-size:2.5rem;font-weight:900;color:var(--gold-primary);margin-bottom:.3rem}.card{background:var(--navy-secondary);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:2rem}.card h2{font-size:1.3rem;margin-bottom:1.5rem;font-weight:700}.candidate-item{padding:1.5rem;background:var(--navy-light);border-radius:12px;margin-bottom:1rem;cursor:pointer;transition:transform .3s}.candidate-item:hover{transform:translateY(-2px)}.match-badge{background:var(--success);color:var(--navy-deep);padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:700;display:inline-block;margin-top:.5rem}@media (max-width:1024px){.sidebar{transform:translateX(-100%)}.main-content{margin-left:0}}
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo" onclick="location.href='home.html'">
+            <div class="logo-icon"></div><span>MORIAL</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active">📊 Dashboard</li>
+            <li class="sidebar-item">👥 Candidates</li>
+            <li class="sidebar-item">📝 Job Postings</li>
+            <li class="sidebar-item">🎯 Interviews</li>
+            <li class="sidebar-item">📈 Analytics</li>
+            <li class="sidebar-item" onclick="location.href='profile.html'">🏢 Company Profile</li>
+            <li class="sidebar-item" onclick="location.href='settings.html'">⚙️ Settings</li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <h1 id="welcome-message">Company Dashboard 🏢</h1>
+            <div class="user-avatar" id="user-avatar" onclick="location.href='profile.html'">TC</div>
+        </header>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value">156</div><div style="color:var(--gray-medium);font-size:.9rem">Total Applicants</div></div>
+            <div class="stat-card"><div class="stat-value">8</div><div style="color:var(--gray-medium);font-size:.9rem">Active Jobs</div></div>
+            <div class="stat-card"><div class="stat-value">24</div><div style="color:var(--gray-medium);font-size:.9rem">Interviews Scheduled</div></div>
+            <div class="stat-card"><div class="stat-value">12</div><div style="color:var(--gray-medium);font-size:.9rem">Hires This Month</div></div>
+        </div>
+        <div class="card">
+            <h2>Top Matched Candidates</h2>
+            <div class="candidate-item" onclick="location.href='job-detail.html'">
+                <div style="font-weight:700;font-size:1.1rem">Sarah Anderson</div>
+                <span class="match-badge">98% Match</span>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.5rem">Frontend Developer • 5 years exp • React, TypeScript, Node.js</div>
+            </div>
+            <div class="candidate-item">
+                <div style="font-weight:700;font-size:1.1rem">Marcus Johnson</div>
+                <span class="match-badge">95% Match</span>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.5rem">Full Stack Developer • 4 years exp • Python, Django, AWS</div>
+            </div>
+            <div class="candidate-item">
+                <div style="font-weight:700;font-size:1.1rem">Emma Liu</div>
+                <span class="match-badge">92% Match</span>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.5rem">UI/UX Designer • 3 years exp • Figma, Adobe XD, HTML/CSS</div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Active Job Postings</h2>
+            <div style="padding:1rem;background:var(--navy-light);border-radius:12px;margin-bottom:1rem">
+                <div style="font-weight:700">Senior Frontend Developer</div>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.3rem">42 applicants • Posted 5 days ago</div>
+            </div>
+            <div style="padding:1rem;background:var(--navy-light);border-radius:12px">
+                <div style="font-weight:700">UX Designer</div>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.3rem">28 applicants • Posted 3 days ago</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const fullName = "{{ full_name if full_name is defined else '' }}";
+        if (fullName && fullName.trim() !== '') {
+            document.getElementById('welcome-message').textContent = `Welcome back, ${fullName}! 🏢`;
+            const names = fullName.trim().split(' ');
+            let initials = '';
+            if (names.length >= 2) {
+                initials = names[0][0] + names[names.length - 1][0];
+            } else if (names.length === 1 && names[0].length > 0) {
+                initials = names[0][0];
+            }
+            if (initials) {
+                document.getElementById('user-avatar').textContent = initials.toUpperCase();
+            }
+        }
+    </script>
+</body>
+</html>

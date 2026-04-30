@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner Dashboard - MORIAL</title>
+    <style>
+        :root {
+            --navy-deep: #0a1628;
+            --navy-primary: #162642;
+            --navy-secondary: #1e3a5f;
+            --navy-light: #2a4a73;
+            --gold-primary: #f5a623;
+            --gold-light: #ffc04d;
+            --success: #7ed321;
+            --white: #ffffff;
+            --gray-light: #e8ecf0;
+            --gray-medium: #8c9db5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: var(--navy-deep);
+            color: var(--white);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: var(--navy-primary);
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 2rem 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-y: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+        .sidebar-item {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--gray-light);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .sidebar-item:hover,
+        .sidebar-item.active {
+            background: var(--navy-secondary);
+            color: var(--white);
+            border-left: 3px solid var(--gold-primary);
+        }
+
+        .main-content {
+            margin-left: 260px;
+            flex: 1;
+            padding: 2rem 3%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .progress-section {
+            background: var(--navy-secondary);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-circle {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold-primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--navy-secondary);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .course-item {
+            padding: 1rem;
+            background: var(--navy-light);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .course-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .course-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-progress {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--navy-deep);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+            border-radius: 10px;
+        }
+
+        .stat-card {
+            background: var(--navy-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gold-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            color: var(--gray-medium);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo" onclick="location.href='home.html'">
+            <div class="logo-icon"></div>
+            <span>MORIAL</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active">📊 Dashboard</li>
+            <li class="sidebar-item" onclick="location.href='course-detail.html'">📚 My Courses</li>
+            <li class="sidebar-item" onclick="location.href='job-detail.html'">💼 Job Matches</li>
+            <li class="sidebar-item">💰 Earnings</li>
+            <li class="sidebar-item">✓ Verification</li>
+            <li class="sidebar-item" onclick="location.href='profile.html'">👤 Profile</li>
+            <li class="sidebar-item" onclick="location.href='settings.html'">⚙️ Settings</li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1 id="welcome-message">Welcome back! 👋</h1>
+            <div class="user-info">
+                <div class="user-avatar" id="user-avatar" onclick="location.href='profile.html'">U</div>
+            </div>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-header">
+                <div>
+                    <h2>Your Learning Progress</h2>
+                    <p style="color: var(--gray-medium)">Current Course: Web Development Bootcamp</p>
+                </div>
+                <div class="progress-circle">65%</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Active Courses</h2>
+                <div class="course-item" onclick="location.href='course-detail.html'">
+                    <div class="course-title">Web Development Bootcamp</div>
+                    <div style="color: var(--gray-medium); font-size: 0.85rem">COURSERA</div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 65%"></div>
+                        </div>
+                        <span style="color: var(--gold-primary); font-weight: 700">65%</span>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <div class="course-title">AI & Machine Learning</div>
+                    <div style="color: var(--gray-medium); font-size: 0.85rem">UDACITY</div>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 30%"></div>
+                        </div>
+                        <span style="color: var(--gold-primary); font-weight: 700">30%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Job Matches</h2>
+                <div class="course-item" onclick="location.href='job-detail.html'">
+                    <div class="course-title">Frontend Developer</div>
+                    <div style="color: var(--gold-primary); font-weight: 700; margin-top: 0.5rem">95% Match</div>
+                    <div style="color: var(--gray-medium); font-size: 0.85rem; margin-top: 0.5rem">TechCorp Inc • Remote • $80K-120K</div>
+                </div>
+                <div class="course-item">
+                    <div class="course-title">React Developer</div>
+                    <div style="color: var(--gold-primary); font-weight: 700; margin-top: 0.5rem">90% Match</div>
+                    <div style="color: var(--gray-medium); font-size: 0.85rem; margin-top: 0.5rem">StartUp Co • Remote • $70K-100K</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Earnings</h2>
+                <div class="stat-card">
+                    <div class="stat-value">$2,400</div>
+                    <div class="stat-label">Total Earnings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Active Connections</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Verification Status</h2>
+                <div style="padding: 1rem; background: var(--navy-light); border-radius: 12px; margin-bottom: 0.8rem">
+                    <div style="display: flex; justify-content: space-between; align-items: center">
+                        <span>✓ Complete Pathways</span>
+                        <span style="color: var(--success)">Done</span>
+                    </div>
+                </div>
+                <div style="padding: 1rem; background: var(--navy-light); border-radius: 12px; margin-bottom: 0.8rem">
+                    <div style="display: flex; justify-content: space-between; align-items: center">
+                        <span>⏳ Build Portfolio</span>
+                        <span style="color: var(--gold-primary)">In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovator Dashboard - MORIAL</title>
+    <style>
+        :root{--navy-deep:#0a1628;--navy-primary:#162642;--navy-secondary:#1e3a5f;--navy-light:#2a4a73;--gold-primary:#f5a623;--purple:#9b59b6;--white:#fff;--gray-light:#e8ecf0;--gray-medium:#8c9db5}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--navy-deep);color:var(--white);display:flex}.sidebar{width:260px;height:100vh;background:var(--navy-primary);position:fixed;left:0;top:0;padding:2rem 0;border-right:1px solid rgba(255,255,255,.1);overflow-y:auto}.logo{display:flex;align-items:center;gap:.5rem;padding:0 2rem;margin-bottom:2.5rem;font-size:1.5rem;font-weight:800;cursor:pointer}.logo-icon{width:30px;height:30px;background:linear-gradient(135deg,var(--gold-primary),#ffc04d);clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}.sidebar-menu{list-style:none}.sidebar-item{padding:1rem 2rem;cursor:pointer;transition:all .3s;color:var(--gray-light);font-weight:500}.sidebar-item:hover,.sidebar-item.active{background:var(--navy-secondary);color:var(--white);border-left:3px solid var(--purple)}.main-content{margin-left:260px;flex:1;padding:2rem 3%}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:3rem}.header h1{font-size:2rem;font-weight:800}.user-avatar{width:45px;height:45px;border-radius:50%;background:linear-gradient(135deg,var(--purple),#b37bbe);display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem}.stat-card{background:var(--navy-secondary);padding:1.5rem;border-radius:16px;border:1px solid rgba(255,255,255,.1)}.stat-value{font-size:2.5rem;font-weight:900;color:var(--purple);margin-bottom:.3rem}.card{background:var(--navy-secondary);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,.1);margin-bottom:2rem}.card h2{font-size:1.3rem;margin-bottom:1.5rem;font-weight:700}.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}.project-card{background:var(--navy-light);padding:1.5rem;border-radius:12px;cursor:pointer;transition:transform .3s}.project-card:hover{transform:translateY(-2px)}.project-status{background:var(--purple);color:var(--white);padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700;display:inline-block;margin-bottom:.8rem}@media (max-width:1024px){.sidebar{transform:translateX(-100%)}.main-content{margin-left:0}}
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo" onclick="location.href='/dashboard'">
+            <div class="logo-icon"></div><span>MORIAL</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="sidebar-item active">📊 Dashboard</li>
+            <li class="sidebar-item">💼 My Portfolio</li>
+            <li class="sidebar-item">💰 Investors</li>
+            <li class="sidebar-item">📈 Funding</li>
+            <li class="sidebar-item">🤝 Partners</li>
+            <li class="sidebar-item" onclick="location.href='/profile'">👤 Profile</li>
+            <li class="sidebar-item" onclick="location.href='/settings'">⚙️ Settings</li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <header class="header">
+            <h1 id="welcome-message">Innovator Dashboard 💡</h1>
+            <div class="user-avatar" id="user-avatar" onclick="location.href='/profile'">AN</div>
+        </header>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value">5</div><div style="color:var(--gray-medium);font-size:.9rem">Active Projects</div></div>
+            <div class="stat-card"><div class="stat-value">$45K</div><div style="color:var(--gray-medium);font-size:.9rem">Total Funding</div></div>
+            <div class="stat-card"><div class="stat-value">12</div><div style="color:var(--gray-medium);font-size:.9rem">Investor Connects</div></div>
+            <div class="stat-card"><div class="stat-value">2.4K</div><div style="color:var(--gray-medium);font-size:.9rem">Profile Views</div></div>
+        </div>
+        <div class="card">
+            <h2>Innovation Portfolio</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="project-status">ACTIVE</span>
+                    <div style="font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Smart Glasses for the Blind</div>
+                    <div style="color:var(--gray-medium);font-size:.85rem">$15K funded • 850 views</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-status" style="background:var(--gold-primary);color:var(--navy-deep)">SEEKING FUNDING</span>
+                    <div style="font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Electric Keke Conversion</div>
+                    <div style="color:var(--gray-medium);font-size:.85rem">$10K target • 620 views</div>
+                </div>
+                <div class="project-card">
+                    <span class="project-status">ACTIVE</span>
+                    <div style="font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Village Verified Incubator</div>
+                    <div style="color:var(--gray-medium);font-size:.85rem">$20K funded • 1.2K views</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Interested Investors</h2>
+            <div style="padding:1rem;background:var(--navy-light);border-radius:12px;margin-bottom:1rem">
+                <div style="font-weight:700">VentureConnect Africa</div>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.3rem">Interested in: Smart Glasses Project</div>
+            </div>
+            <div style="padding:1rem;background:var(--navy-light);border-radius:12px">
+                <div style="font-weight:700">Impact First Capital</div>
+                <div style="color:var(--gray-medium);font-size:.85rem;margin-top:.3rem">Interested in: Village Verified</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const fullName = "{{ full_name if full_name is defined else '' }}";
+        if (fullName && fullName.trim() !== '') {
+            document.getElementById('welcome-message').textContent = `Welcome back, ${fullName}! 💡`;
+            const names = fullName.trim().split(' ');
+            let initials = '';
+            if (names.length >= 2) {
+                initials = names[0][0] + names[names.length - 1][0];
+            } else if (names.length === 1 && names[0].length > 0) {
+                initials = names[0][0];
+            }
+            if (initials) {
+                document.getElementById('user-avatar').textContent = initials.toUpperCase();
+            }
+        }
+    </script>
+</body>
+</html>
